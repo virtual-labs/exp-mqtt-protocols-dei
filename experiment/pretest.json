@@ -2,37 +2,37 @@
   "version": 2.0,
   "questions": [
     {
-      "question": "This is a Sample Question 1?",
+      "question": "What is the main advantage of using MQTT protocol for IoT data transmission?",
       "answers": {
-        "a": "answer1",
-        "b": "answer2",
-        "c": "answer3",
-        "d": "answer4"
+        "a": "It requires high bandwidth",
+        "b": "It is lightweight and efficient in low-bandwidth environments",
+        "c": "It uses a large number of data packets",
+        "d": "It is designed for large-scale file transfers"
       },
       "explanations": {
-        "a": "Explanation 1  <a href='www.google.com'>here</a>",
-        "b": "Explanation 2",
-        "c": "Explanation 2",
-        "d": "Explanation 2"
+        "a": "MQTT is designed for low-bandwidth environments, not high bandwidth.",
+        "b": "MQTT is lightweight and ideal for low-bandwidth, high-latency, or unreliable networks.",
+        "c": "MQTT minimizes the number of data packets to optimize efficiency.",
+        "d": "MQTT is not used for large-scale file transfers, but rather for real-time data messages."
       },
-      "correctAnswer": "a",
+      "correctAnswer": "b",
       "difficulty": "beginner"
     },
     {
-      "question": "This is a Sample Question 2?",
+      "question": "In MQTT, which component is responsible for handling messages between the client and the server?",
       "answers": {
-        "a": "answer1",
-        "b": "answer2",
-        "c": "answer3",
-        "d": "answer4"
+        "a": "Publisher",
+        "b": "Broker",
+        "c": "Client",
+        "d": "Subscriber"
       },
       "explanations": {
-        "a": "Explanation 1  <a href='www.google.com'>here</a>",
-        "b": "Explanation 2",
-        "c": "Explanation 2",
-        "d": "Explanation 2"
+        "a": "The publisher sends messages, but the broker handles the communication.",
+        "b": "The broker is responsible for receiving, storing, and forwarding messages between clients.",
+        "c": "The client sends or receives messages, but the broker handles the communication.",
+        "d": "The subscriber receives messages, but the broker handles the communication."
       },
-      "correctAnswer": "c",
+      "correctAnswer": "b",
       "difficulty": "beginner"
     }
   ]

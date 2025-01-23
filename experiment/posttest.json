@@ -2,35 +2,35 @@
   "version": 2.0,
   "questions": [
     {
-      "question": "This is a Sample Question 1?",
+      "question": "Which MQTT message type is used to subscribe to a topic and receive live updates from the broker?",
       "answers": {
-        "a": "answer1",
-        "b": "answer2",
-        "c": "answer3",
-        "d": "answer4"
+        "a": "PUBLISH",
+        "b": "SUBSCRIBE",
+        "c": "CONNECT",
+        "d": "DISCONNECT"
       },
       "explanations": {
-        "a": "Explanation 1  <a href='www.google.com'>here</a>",
-        "b": "Explanation 2",
-        "c": "Explanation 2",
-        "d": "Explanation 2"
+        "a": "PUBLISH is used by the client to send messages to a topic, not to subscribe.",
+        "b": "SUBSCRIBE is used to request messages from a topic and receive updates.",
+        "c": "CONNECT is used to establish a connection between the client and the broker.",
+        "d": "DISCONNECT is used to close the connection between the client and the broker."
       },
-      "correctAnswer": "a",
+      "correctAnswer": "b",
       "difficulty": "beginner"
     },
     {
-      "question": "This is a Sample Question 2?",
+      "question": "What is the role of the **Quality of Service (QoS)** level in MQTT?",
       "answers": {
-        "a": "answer1",
-        "b": "answer2",
-        "c": "answer3",
-        "d": "answer4"
+        "a": "It defines the frequency of message transmission",
+        "b": "It determines the message retention period",
+        "c": "It defines the reliability of message delivery",
+        "d": "It specifies the message format"
       },
       "explanations": {
-        "a": "Explanation 1  <a href='www.google.com'>here</a>",
-        "b": "Explanation 2",
-        "c": "Explanation 2",
-        "d": "Explanation 2"
+        "a": "QoS does not define the frequency of transmission, but its delivery reliability.",
+        "b": "QoS does not determine retention period, it defines reliability of message delivery.",
+        "c": "QoS defines the reliability of message delivery, ranging from 'at most once' to 'exactly once'.",
+        "d": "QoS does not define message format, it defines message delivery reliability."
       },
       "correctAnswer": "c",
       "difficulty": "beginner"
