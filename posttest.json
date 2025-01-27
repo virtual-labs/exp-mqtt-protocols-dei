@@ -1,0 +1,39 @@
+{
+  "version": 2.0,
+  "questions": [
+    {
+      "question": "Which MQTT message type is used to subscribe to a topic and receive live updates from the broker?",
+      "answers": {
+        "a": "PUBLISH",
+        "b": "SUBSCRIBE",
+        "c": "CONNECT",
+        "d": "DISCONNECT"
+      },
+      "explanations": {
+        "a": "PUBLISH is used by the client to send messages to a topic, not to subscribe.",
+        "b": "SUBSCRIBE is used to request messages from a topic and receive updates.",
+        "c": "CONNECT is used to establish a connection between the client and the broker.",
+        "d": "DISCONNECT is used to close the connection between the client and the broker."
+      },
+      "correctAnswer": "b",
+      "difficulty": "beginner"
+    },
+    {
+      "question": "What is the role of the **Quality of Service (QoS)** level in MQTT?",
+      "answers": {
+        "a": "It defines the frequency of message transmission",
+        "b": "It determines the message retention period",
+        "c": "It defines the reliability of message delivery",
+        "d": "It specifies the message format"
+      },
+      "explanations": {
+        "a": "QoS does not define the frequency of transmission, but its delivery reliability.",
+        "b": "QoS does not determine retention period, it defines reliability of message delivery.",
+        "c": "QoS defines the reliability of message delivery, ranging from 'at most once' to 'exactly once'.",
+        "d": "QoS does not define message format, it defines message delivery reliability."
+      },
+      "correctAnswer": "c",
+      "difficulty": "beginner"
+    }
+  ]
+}

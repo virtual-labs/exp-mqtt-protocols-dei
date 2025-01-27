@@ -1,0 +1,124 @@
+
+/home/runner/work/exp-mqtt-protocols-dei/exp-mqtt-protocols-dei/experiment/simulation/main.js
+    5:1   warning  'am5' is not defined                  no-undef
+    8:13  warning  'am5radar' is not defined             no-undef
+   16:28  warning  'am5radar' is not defined             no-undef
+   20:29  warning  'am5' is not defined                  no-undef
+   23:30  warning  'am5' is not defined                  no-undef
+   24:30  warning  'am5' is not defined                  no-undef
+   25:30  warning  'am5' is not defined                  no-undef
+   26:30  warning  'am5' is not defined                  no-undef
+   32:13  warning  'am5xy' is not defined                no-undef
+   44:36  warning  'am5xy' is not defined                no-undef
+   45:21  warning  'am5radar' is not defined             no-undef
+   46:25  warning  'am5' is not defined                  no-undef
+   57:17  warning  'am5' is not defined                  no-undef
+   60:17  warning  'am5' is not defined                  no-undef
+   69:25  warning  'am5' is not defined                  no-undef
+   69:38  warning  'am5' is not defined                  no-undef
+   75:25  warning  'am5' is not defined                  no-undef
+   75:38  warning  'am5' is not defined                  no-undef
+   81:20  warning  'am5' is not defined                  no-undef
+   82:25  warning  'am5themes_Animated' is not defined   no-undef
+   84:50  warning  'am5xy' is not defined                no-undef
+   92:38  warning  'am5xy' is not defined                no-undef
+  101:23  warning  'am5xy' is not defined                no-undef
+  107:38  warning  'am5xy' is not defined                no-undef
+  108:23  warning  'am5xy' is not defined                no-undef
+  111:40  warning  'am5xy' is not defined                no-undef
+  190:15  warning  'CodeMirror' is not defined           no-undef
+  201:10  warning  'showCode' is defined but never used  no-unused-vars
+
+/home/runner/work/exp-mqtt-protocols-dei/exp-mqtt-protocols-dei/experiment/simulation/script.js
+  74:11  warning  'username' is assigned a value but never used  no-unused-vars
+  75:11  warning  'password' is assigned a value but never used  no-unused-vars
+
+/home/runner/work/exp-mqtt-protocols-dei/exp-mqtt-protocols-dei/experiment/simulation/src/js/chart.js
+    1:1   warning  'am5' is not defined                          no-undef
+    4:14  warning  'am5' is not defined                          no-undef
+    8:5   warning  'am5themes_Animated' is not defined           no-undef
+   38:44  warning  'am5xy' is not defined                        no-undef
+   48:16  warning  'am5' is not defined                          no-undef
+   51:32  warning  'am5xy' is not defined                        no-undef
+   60:15  warning  'am5xy' is not defined                        no-undef
+   64:14  warning  'am5' is not defined                          no-undef
+   67:32  warning  'am5xy' is not defined                        no-undef
+   68:15  warning  'am5xy' is not defined                        no-undef
+   74:34  warning  'am5xy' is not defined                        no-undef
+   80:14  warning  'am5' is not defined                          no-undef
+   93:23  warning  'am5' is not defined                          no-undef
+   94:11  warning  'circle0' is assigned a value but never used  no-unused-vars
+   94:45  warning  'am5' is not defined                          no-undef
+   96:15  warning  'am5' is not defined                          no-undef
+   98:45  warning  'am5' is not defined                          no-undef
+  100:15  warning  'am5' is not defined                          no-undef
+  107:17  warning  'am5' is not defined                          no-undef
+  107:30  warning  'am5' is not defined                          no-undef
+  115:17  warning  'am5' is not defined                          no-undef
+  115:30  warning  'am5' is not defined                          no-undef
+  119:14  warning  'am5' is not defined                          no-undef
+  127:36  warning  'am5xy' is not defined                        no-undef
+  145:16  warning  'am5' is not defined                          no-undef
+
+/home/runner/work/exp-mqtt-protocols-dei/exp-mqtt-protocols-dei/experiment/simulation/src/js/chart2.js
+    1:1   warning  'am5' is not defined                          no-undef
+    4:16  warning  'am5' is not defined                          no-undef
+    8:7   warning  'am5themes_Animated' is not defined           no-undef
+   38:46  warning  'am5xy' is not defined                        no-undef
+   48:18  warning  'am5' is not defined                          no-undef
+   51:34  warning  'am5xy' is not defined                        no-undef
+   60:17  warning  'am5xy' is not defined                        no-undef
+   64:16  warning  'am5' is not defined                          no-undef
+   67:34  warning  'am5xy' is not defined                        no-undef
+   68:17  warning  'am5xy' is not defined                        no-undef
+   74:36  warning  'am5xy' is not defined                        no-undef
+   80:16  warning  'am5' is not defined                          no-undef
+   93:25  warning  'am5' is not defined                          no-undef
+   94:13  warning  'circle0' is assigned a value but never used  no-unused-vars
+   94:47  warning  'am5' is not defined                          no-undef
+   96:17  warning  'am5' is not defined                          no-undef
+   98:47  warning  'am5' is not defined                          no-undef
+  100:17  warning  'am5' is not defined                          no-undef
+  107:19  warning  'am5' is not defined                          no-undef
+  107:32  warning  'am5' is not defined                          no-undef
+  115:19  warning  'am5' is not defined                          no-undef
+  115:32  warning  'am5' is not defined                          no-undef
+  119:16  warning  'am5' is not defined                          no-undef
+  127:38  warning  'am5xy' is not defined                        no-undef
+  145:18  warning  'am5' is not defined                          no-undef
+
+/home/runner/work/exp-mqtt-protocols-dei/exp-mqtt-protocols-dei/experiment/simulation/src/js/gauge2.js
+    1:1   warning  'am5' is not defined                 no-undef
+    5:16  warning  'am5' is not defined                 no-undef
+   10:7   warning  'am5themes_Animated' is not defined  no-undef
+   16:7   warning  'am5radar' is not defined            no-undef
+   28:24  warning  'am5radar' is not defined            no-undef
+   39:7   warning  'am5xy' is not defined               no-undef
+   52:21  warning  'am5radar' is not defined            no-undef
+   54:15  warning  'am5' is not defined                 no-undef
+   63:15  warning  'am5' is not defined                 no-undef
+   70:15  warning  'am5' is not defined                 no-undef
+   76:7   warning  'am5xy' is not defined               no-undef
+   84:7   warning  'am5' is not defined                 no-undef
+   85:18  warning  'am5' is not defined                 no-undef
+   87:18  warning  'am5' is not defined                 no-undef
+  105:19  warning  'am5' is not defined                 no-undef
+  105:32  warning  'am5' is not defined                 no-undef
+  112:19  warning  'am5' is not defined                 no-undef
+  112:32  warning  'am5' is not defined                 no-undef
+  119:19  warning  'am5' is not defined                 no-undef
+  119:32  warning  'am5' is not defined                 no-undef
+  125:20  warning  'am5' is not defined                 no-undef
+
+/home/runner/work/exp-mqtt-protocols-dei/exp-mqtt-protocols-dei/experiment/simulation/src/js/main.js
+  139:1  warning  '$' is not defined  no-undef
+  143:3  warning  '$' is not defined  no-undef
+  146:7  warning  '$' is not defined  no-undef
+  150:7  warning  '$' is not defined  no-undef
+  151:7  warning  '$' is not defined  no-undef
+  154:7  warning  '$' is not defined  no-undef
+  158:7  warning  '$' is not defined  no-undef
+  159:7  warning  '$' is not defined  no-undef
+
+✖ 109 problems (0 errors, 109 warnings)
+
