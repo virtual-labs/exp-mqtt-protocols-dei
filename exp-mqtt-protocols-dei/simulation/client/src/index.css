@@ -1,0 +1,177 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --background: hsl(0, 0%, 100%);
+  --foreground: hsl(220, 14.3%, 4.1%);
+  --muted: hsl(220, 4.8%, 95.9%);
+  --muted-foreground: hsl(220, 5.3%, 44.7%);
+  --popover: hsl(0, 0%, 100%);
+  --popover-foreground: hsl(220, 14.3%, 4.1%);
+  --card: hsl(0, 0%, 100%);
+  --card-foreground: hsl(220, 14.3%, 4.1%);
+  --border: hsl(220, 5.9%, 90%);
+  --input: hsl(220, 5.9%, 90%);
+  --primary: hsl(207, 90%, 54%);
+  --primary-foreground: hsl(211, 100%, 99%);
+  --secondary: hsl(220, 4.8%, 95.9%);
+  --secondary-foreground: hsl(220, 9.8%, 10%);
+  --accent: hsl(220, 4.8%, 95.9%);
+  --accent-foreground: hsl(220, 9.8%, 10%);
+  --destructive: hsl(0, 84.2%, 60.2%);
+  --destructive-foreground: hsl(220, 9.1%, 97.8%);
+  --ring: hsl(220, 14.3%, 4.1%);
+  --radius: 0.5rem;
+  
+  /* Custom physics simulation colors */
+  --science-blue: hsl(220, 90%, 32%);
+  --bright-blue: hsl(217, 91%, 60%);
+  --wave-orange: hsl(20, 85%, 55%);
+  --interference-red: hsl(15, 80%, 50%);
+  --wave-violet: hsl(271, 76%, 53%);
+  --wave-green: hsl(142, 76%, 36%);
+  --educational-bg: hsl(220, 15%, 97%);
+  --ruler-color: hsl(210, 20%, 25%);
+  --fringe-bright: hsl(15, 75%, 45%);
+  --fringe-dark: hsl(220, 10%, 15%);
+}
+
+.dark {
+  --background: hsl(240, 10%, 3.9%);
+  --foreground: hsl(0, 0%, 98%);
+  --muted: hsl(240, 3.7%, 15.9%);
+  --muted-foreground: hsl(240, 5%, 64.9%);
+  --popover: hsl(240, 10%, 3.9%);
+  --popover-foreground: hsl(0, 0%, 98%);
+  --card: hsl(240, 10%, 3.9%);
+  --card-foreground: hsl(0, 0%, 98%);
+  --border: hsl(240, 3.7%, 15.9%);
+  --input: hsl(240, 3.7%, 15.9%);
+  --primary: hsl(207, 90%, 54%);
+  --primary-foreground: hsl(211, 100%, 99%);
+  --secondary: hsl(240, 3.7%, 15.9%);
+  --secondary-foreground: hsl(0, 0%, 98%);
+  --accent: hsl(240, 3.7%, 15.9%);
+  --accent-foreground: hsl(0, 0%, 98%);
+  --destructive: hsl(0, 62.8%, 30.6%);
+  --destructive-foreground: hsl(0, 0%, 98%);
+  --ring: hsl(240, 4.9%, 83.9%);
+  --radius: 0.5rem;
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply font-sans antialiased bg-background text-foreground;
+    font-family: 'Inter', sans-serif;
+  }
+}
+
+@layer components {
+  .simulation-container {
+    background: var(--educational-bg);
+    @apply border border-gray-300 rounded-xl shadow-lg;
+  }
+  
+  .canvas-container {
+    @apply bg-white rounded-lg border-2 border-gray-200;
+    box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.06);
+  }
+  
+  .measurement-ruler {
+    background: linear-gradient(to right, 
+      transparent 0%, transparent 48%, 
+      var(--ruler-color) 48%, var(--ruler-color) 52%, 
+      transparent 52%, transparent 100%);
+    background-size: 10px 2px;
+    @apply border-t border-b border-gray-300;
+  }
+  
+  .millimeter-scale {
+    background: repeating-linear-gradient(
+      to right,
+      var(--ruler-color) 0px,
+      var(--ruler-color) 1px,
+      transparent 1px,
+      transparent 10px
+    );
+    height: 20px;
+    @apply border border-gray-400;
+  }
+  
+  .spectrum-slider {
+    background: linear-gradient(to right, 
+      hsl(271, 76%, 53%) 0%,    /* 380nm - violet */
+      hsl(217, 91%, 60%) 16%,   /* 450nm - blue */
+      hsl(142, 76%, 36%) 33%,   /* 500nm - green */
+      hsl(60, 92%, 50%) 50%,    /* 550nm - yellow */
+      hsl(38, 92%, 50%) 66%,    /* 580nm - orange */
+      hsl(15, 80%, 50%) 83%,    /* 650nm - red */
+      hsl(0, 70%, 40%) 100%     /* 700nm - dark red */
+    );
+    height: 12px;
+    border-radius: 6px;
+    @apply border border-gray-300 shadow-sm;
+  }
+  
+  .slit-draggable {
+    @apply cursor-move transition-all duration-300 hover:scale-110;
+    filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.2));
+  }
+  
+  .control-panel {
+    background: linear-gradient(135deg, 
+      var(--educational-bg) 0%, 
+      hsl(220, 12%, 95%) 100%);
+    @apply border border-gray-300 shadow-md;
+  }
+  
+  .physics-formula {
+    @apply font-mono text-sm bg-blue-50 px-3 py-2 rounded border border-blue-200;
+    color: var(--science-blue);
+  }
+  
+  .interference-fringe {
+    background: linear-gradient(to bottom,
+      var(--fringe-bright) 0%,
+      var(--fringe-dark) 50%,
+      var(--fringe-bright) 100%);
+  }
+  
+  .wave-animation {
+    animation: wave-propagation 3s ease-in-out infinite;
+  }
+  
+  .precise-measurement {
+    @apply font-mono text-xs bg-gray-100 px-2 py-1 rounded border;
+    color: var(--ruler-color);
+  }
+  
+  @keyframes wave-propagation {
+    0% { 
+      opacity: 0.8; 
+      transform: scale(0.95);
+    }
+    50% { 
+      opacity: 1; 
+      transform: scale(1);
+    }
+    100% { 
+      opacity: 0.8; 
+      transform: scale(0.95);
+    }
+  }
+  
+  .educational-card {
+    @apply bg-white border border-gray-200 rounded-lg shadow-sm;
+    transition: all 0.2s ease-in-out;
+  }
+  
+  .educational-card:hover {
+    @apply shadow-md border-blue-300;
+  }
+}
