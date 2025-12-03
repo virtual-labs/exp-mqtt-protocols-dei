@@ -1,0 +1,344 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Virtual IoT Lab DEI</title>
+  <link rel="icon" href="https://www.vlab.co.in/images/logo.jpg" type="image/x-icon" />
+  <link rel="stylesheet" type="text/css" href="style.css" />
+  <link rel="stylesheet" type="text/css" href="chart_styles.css" />
+  <!-- CodeMirror CSS -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.2/codemirror.min.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.2/theme/default.min.css" />
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
+  <!-- CodeMirror JS -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.2/codemirror.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.2/mode/clike/clike.min.js"></script>
+  <!-- amCharts Resources -->
+  <script src="https://cdn.amcharts.com/lib/5/index.js"></script>
+  <script src="https://cdn.amcharts.com/lib/5/xy.js"></script>
+  <script src="https://cdn.amcharts.com/lib/5/radar.js"></script>
+  <script src="https://cdn.amcharts.com/lib/5/themes/Animated.js"></script>
+</head>
+
+<body>
+
+
+  <div class="container">
+    
+    <img id="ifimg" src="./src/images/dht_off.gif" alt="interfacing" />
+    <textarea readonly cols="30" rows="10" type="text" id="arduinoCode" placeholder="insert the code"></textarea>
+    <h2 id="pushbuttonPower" onclick="changePower();">Start Simulation</h2>
+
+  </div>
+
+  <a>
+    <p class="p-head2">After start the simulation, the data will be send to IoT server using MQTT protocol.</p>
+  </a>
+
+  <!-- Main container -->
+  <div class="container2" id="scroll">
+
+    <!-- Header -->
+    <h1>🌐 MQTT Broker Dashboard</h1>
+
+    <!-- MQTT Broker Info Section -->
+    <div class="mqtt-info-section">
+      <div class="broker-info-card">
+        <h3>📡 Broker Information</h3>
+        <div class="info-row">
+          <span class="label">Broker Address:</span>
+          <span class="value">mqtt.iot-server.com</span>
+        </div>
+        <div class="info-row">
+          <span class="label">Port:</span>
+          <span class="value">1883</span>
+        </div>
+        <div class="info-row">
+          <span class="label">Protocol:</span>
+          <span class="value">MQTT v3.1.1</span>
+        </div>
+        <div class="info-row">
+          <span class="label">Client ID:</span>
+          <span class="value">ESP32_DHT_Client</span>
+        </div>
+        <div class="info-row">
+          <span class="label">Status:</span>
+          <span class="value status-connected" id="brokerStatus">⚫ Disconnected</span>
+        </div>
+      </div>
+
+      <div class="topics-card">
+        <h3>📢 Subscribed Topics</h3>
+        <div class="topic-item">
+          <span class="topic-icon">🌡️</span>
+          <span class="topic-name">iot/temperature</span>
+        </div>
+        <div class="topic-item">
+          <span class="topic-icon">💧</span>
+          <span class="topic-name">iot/humidity</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- Live Messages Section -->
+    <div class="messages-section">
+      <h3>📨 Published Messages (Live Feed)</h3>
+      <div class="messages-container" id="messagesContainer">
+        <div class="no-messages">No messages yet. Start simulation to see published data...</div>
+      </div>
+    </div>
+
+    <!-- Gauge Charts -->
+    <div class="gauge-container">
+      <div class="gauge-box">
+        <div class="gauge-title">🌡️ Temperature Sensor</div>
+        <div id="gaugeDiv1"></div>
+      </div>
+      <div class="gauge-box">
+        <div class="gauge-title">💧 Humidity Sensor</div>
+        <div id="gaugeDiv2"></div>
+      </div>
+    </div>
+
+    <!-- Chart Containers -->
+    <div class="chart-container">
+      <div class="chart-box">
+        <div id="chartdiv1"></div>
+        <div class="chart-title">Temperature</div>
+      </div>
+      <div class="chart-box">
+        <div id="chartdiv2"></div>
+        <div class="chart-title">Humidity</div>
+      </div>
+    </div>
+
+  </div> <!-- End of container2 -->
+
+  <!-- External JavaScript file -->
+  <script>
+    // Initialize CodeMirror editor in read-only mode with an increased height
+    var editor = CodeMirror.fromTextArea(document.getElementById("arduinoCode"), {
+          mode: "text/x-c++src", // For C++/Arduino syntax highlighting
+          lineNumbers: true, // Show line numbers
+          matchBrackets: true, // Highlight matching brackets
+          theme: "default", // You can change the theme
+          readOnly: "nocursor", // Make the editor read-only
+          tabSize: 4,
+          indentUnit: 4,
+      });
+
+    // for insert code
+    function insertled() {
+      var arduinoCode = `/* -----------------------------------------------------------
+   DHT22 + I2C LCD + MQTT(ESP32 / ESP8266)
+   - Publishes temperature & humidity to MQTT
+   - Shows live values on 16x2 I2C LCD
+   - Works with DHT22 sensor   
+   ----------------------------------------------------------- */
+
+#ifdef ESP8266
+  #include <ESP8266WiFi.h>
+#else
+  #include <WiFi.h>
+#endif
+
+#include <PubSubClient.h>
+#include <DHT.h>
+#include <ArduinoJson.h>   // optional, used for JSON payload (install via Library Manager)
+
+// ======= USER CONFIG =======
+const char* ssid       = "iotvlab";
+const char* password   = "iotvlab123";
+
+const char* mqtt_broker = "mqtt.iot-server.com";
+const uint16_t mqtt_port = 1883;
+
+// Topics (change as required)
+const char* topic_temp  = "iot/temperature";
+const char* topic_hum   = "iot/humidity";
+const char* topic_json  = "iot/sensor/json";
+
+// Give a unique client id (append chip ID)
+String mqtt_client_id_base = "ESP_DHT_Client_";
+
+// ======= SENSOR CONFIG =======
+#define DHTPIN 4          // Data pin for DHT (change if needed)
+#define DHTTYPE DHT11     // DHT11 or DHT22
+DHT dht(DHTPIN, DHTTYPE);
+
+// ======= GLOBALS =======
+WiFiClient  wifiClient;
+PubSubClient client(wifiClient);
+
+// Helper to return unique client id
+String makeClientId() {
+  #ifdef ESP8266
+    uint32_t id = ESP.getChipId();
+  #else
+    uint64_t id64 = ESP.getEfuseMac();
+    uint32_t id = (uint32_t)(id64 & 0xFFFFFFFF);
+  #endif
+  return mqtt_client_id_base + String(id);
+}
+
+// Forward declarations
+void connectWiFi();
+void connectMQTT();
+void publishSensorData();
+
+void setup() {
+  Serial.begin(115200);
+  delay(100);
+
+  dht.begin();
+
+  client.setServer(mqtt_broker, mqtt_port);
+
+  connectWiFi();
+  connectMQTT();
+}
+
+void loop() {
+  // Ensure WiFi
+  if (WiFi.status() != WL_CONNECTED) {
+    connectWiFi();
+  }
+
+  // Ensure MQTT
+  if (!client.connected()) {
+    connectMQTT();
+  }
+  client.loop();
+
+  // Read & publish sensor data
+  publishSensorData();
+
+  // Wait before next reading (10 seconds)
+  delay(10000);
+}
+
+// ------------------ Functions ------------------
+
+void connectWiFi() {
+  if (WiFi.status() == WL_CONNECTED) return;
+  Serial.print("Connecting to WiFi ");
+  Serial.print(ssid);
+  Serial.print(" ... ");
+
+  WiFi.begin(ssid, password);
+
+  uint32_t start = millis();
+  while (WiFi.status() != WL_CONNECTED) {
+    delay(500);
+    Serial.print(".");
+    // Optional timeout: if wifi takes too long, restart attempt after some time
+    if (millis() - start > 20000UL) {
+      Serial.println("\nWiFi connect timed out, retrying...");
+      // You can add a board reset or a longer backoff here if desired
+      start = millis();
+    }
+  }
+  Serial.println();
+  Serial.print("Connected to WiFi, IP: ");
+  Serial.println(WiFi.localIP());
+}
+
+void connectMQTT() {
+  if (client.connected()) return;
+
+  String clientId = makeClientId();
+  Serial.print("Connecting to MQTT broker ");
+  Serial.print(mqtt_broker);
+  Serial.print(" ... ");
+
+  // Optional Last Will message
+  // client.connect(clientId.c_str(), nullptr, nullptr, "iot/status", 0, true, "offline");
+
+  uint8_t retryCount = 0;
+  while (!client.connected()) {
+    if (client.connect(clientId.c_str())) {
+      Serial.println("Connected to MQTT broker.");
+      // You can subscribe to topics here if needed
+      // client.subscribe("some/topic");
+      // Publish "online" status if desired
+      // client.publish("iot/status", "online");
+      break;
+    } else {
+      int state = client.state();
+      Serial.print("Failed, rc=");
+      Serial.print(state);
+      Serial.print("; retrying in 5s ... (");
+      Serial.print(++retryCount);
+      Serial.println(")");
+      delay(5000);
+
+      // Optional: if too many retries, restart board or backoff more
+      if (retryCount > 10) {
+        Serial.println("Too many MQTT retries, restarting device...");
+        #ifdef ESP8266
+          ESP.restart();
+        #else
+          ESP.restart();
+        #endif
+      }
+    }
+  }
+}
+
+void publishSensorData() {
+  // Read sensor (temperature in °C and humidity %)
+  float temperature = dht.readTemperature();
+  float humidity = dht.readHumidity();
+
+  // Validate readings
+  if (isnan(temperature) || isnan(humidity)) {
+    Serial.println("Failed to read from DHT sensor!");
+    return;
+  }
+
+  // Prepare human-readable values (2 decimal places)
+  char tempStr[16], humStr[16];
+  dtostrf(temperature, 6, 2, tempStr); // float to string helper
+  dtostrf(humidity, 6, 2, humStr);
+
+  // Publish individual topics
+  if (client.publish(topic_temp, tempStr)) {
+    Serial.print("Temperature published: ");
+    Serial.println(tempStr);
+  } else {
+    Serial.println("Failed to publish temperature");
+  }
+
+  if (client.publish(topic_hum, humStr)) {
+    Serial.print("Humidity published: ");
+    Serial.println(humStr);
+  } else {
+    Serial.println("Failed to publish humidity");
+  }
+
+  // Also publish a compact JSON payload to topic_json
+  // Example payload: {"t":25.12,"h":60.45}
+  StaticJsonDocument<128> doc;
+  doc["t"] = roundf(temperature * 100) / 100.0; // limit to 2 decimals
+  doc["h"] = roundf(humidity * 100) / 100.0;
+  char jsonBuf[128];
+  size_t n = serializeJson(doc, jsonBuf, sizeof(jsonBuf));
+  if (client.publish(topic_json, jsonBuf, n)) {
+    Serial.print("JSON published: ");
+    Serial.println(jsonBuf);
+  } else {
+    Serial.println("Failed to publish JSON");
+  }
+}
+
+  `;
+      editor.setValue(arduinoCode);
+    }
+    insertled();
+  </script>
+  <script type="text/javascript" src="main.js"></script>
+</body>
+
+</html>
