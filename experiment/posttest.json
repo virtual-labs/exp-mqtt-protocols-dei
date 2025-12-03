@@ -2,38 +2,104 @@
   "version": 2.0,
   "questions": [
     {
-      "question": "Which MQTT message type is used to subscribe to a topic and receive live updates from the broker?",
+      "question": "Compare publish–subscribe and client–server models. Which statement is correct?",
       "answers": {
-        "a": "PUBLISH",
-        "b": "SUBSCRIBE",
-        "c": "CONNECT",
-        "d": "DISCONNECT"
+        "a": "Client–server allows many clients to send messages without a server",
+        "b": "Publish–subscribe requires direct connection between publisher and subscriber",
+        "c": "Publish–subscribe uses a broker to route messages between publishers and subscribers",
+        "d": "Client–server is event-driven like publish–subscribe"
       },
-      "explanations": {
-        "a": "PUBLISH is used by the client to send messages to a topic, not to subscribe.",
-        "b": "SUBSCRIBE is used to request messages from a topic and receive updates.",
-        "c": "CONNECT is used to establish a connection between the client and the broker.",
-        "d": "DISCONNECT is used to close the connection between the client and the broker."
+      "difficulty": "intermediate"
+    },
+    {
+      "question": "Why is MQTT preferred in battery-powered IoT devices?",
+      "answers": {
+        "a": "It consumes more power than HTTP",
+        "b": "It requires high bandwidth",
+        "c": "It is lightweight and uses low power",
+        "d": "It does not support sleep modes"
       },
-      "correctAnswer": "b",
       "difficulty": "beginner"
     },
     {
-      "question": "What is the role of the **Quality of Service (QoS)** level in MQTT?",
+      "question": "How does QoS improve message delivery in MQTT?",
       "answers": {
-        "a": "It defines the frequency of message transmission",
-        "b": "It determines the message retention period",
-        "c": "It defines the reliability of message delivery",
-        "d": "It specifies the message format"
+        "a": "By increasing Wi-Fi speed",
+        "b": "By controlling how reliably messages are delivered",
+        "c": "By reducing broker memory usage",
+        "d": "By encrypting all messages automatically"
       },
-      "explanations": {
-        "a": "QoS does not define the frequency of transmission, but its delivery reliability.",
-        "b": "QoS does not determine retention period, it defines reliability of message delivery.",
-        "c": "QoS defines the reliability of message delivery, ranging from 'at most once' to 'exactly once'.",
-        "d": "QoS does not define message format, it defines message delivery reliability."
+      "difficulty": "intermediate"
+    },
+    {
+      "question": "How do MQTT topics work?",
+      "answers": {
+        "a": "They store sensor data permanently",
+        "b": "They define channels where messages are published and subscribed",
+        "c": "They are used only for authentication",
+        "d": "They control Wi-Fi connection strength"
       },
-      "correctAnswer": "c",
       "difficulty": "beginner"
+    },
+    {
+      "question": "What happens when ESP8266 loses internet connection during MQTT publish?",
+      "answers": {
+        "a": "Message is always delivered later automatically",
+        "b": "Publish fails and may be retried depending on QoS",
+        "c": "Broker sends the data using SMS",
+        "d": "ESP8266 switches to HTTP mode"
+      },
+      "difficulty": "intermediate"
+    },
+    {
+      "question": "Which is an example use case of MQTT in smart homes?",
+      "answers": {
+        "a": "Sending emails from a computer",
+        "b": "Controlling lights and switches using publish–subscribe messages",
+        "c": "Running heavy data analytics",
+        "d": "Offline data storage"
+      },
+      "difficulty": "beginner"
+    },
+    {
+      "question": "What is the difference between MQTT broker and subscriber?",
+      "answers": {
+        "a": "Broker publishes sensor data; subscriber receives it",
+        "b": "Subscriber stores all messages permanently",
+        "c": "Broker routes messages; subscriber receives messages from topics",
+        "d": "Subscriber connects devices to the internet"
+      },
+      "difficulty": "beginner"
+    },
+    {
+      "question": "How can multiple sensors send data using a single MQTT topic?",
+      "answers": {
+        "a": "By using UDP packets",
+        "b": "By sending data through different brokers",
+        "c": "By publishing structured or labeled data to the same topic",
+        "d": "By enabling Bluetooth mode"
+      },
+      "difficulty": "intermediate"
+    },
+    {
+      "question": "Why is MQTT considered lightweight?",
+      "answers": {
+        "a": "It uses complex headers",
+        "b": "It requires large memory",
+        "c": "It uses very small packet sizes and minimal overhead",
+        "d": "It needs constant high-speed internet"
+      },
+      "difficulty": "beginner"
+    },
+    {
+      "question": "How can dashboards like Node-RED or MQTT Explorer visualize MQTT data?",
+      "answers": {
+        "a": "By blocking broker connections",
+        "b": "By connecting as subscribers and displaying incoming messages",
+        "c": "By converting MQTT into SMS alerts",
+        "d": "By sending data directly to Arduino pins"
+      },
+      "difficulty": "intermediate"
     }
   ]
 }
