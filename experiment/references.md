@@ -1,4 +1,4 @@
-## References
+### References
 
 1. Eclipse Foundation, "MQTT Essentials: A Lightweight IoT Protocol", Available at: https://mqtt.org
 2. ESP32 Official Documentation, "MQTT Client Usage", Available at: https://docs.espressif.com

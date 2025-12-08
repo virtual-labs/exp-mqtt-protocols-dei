@@ -2,7 +2,7 @@
   "version": 2.0,
   "questions": [
     {
-      "question": "MQTT stands for ___?",
+      "question": "1. MQTT stands for ___?",
       "answers": {
         "a": "Message Queue Telemetry Transport",
         "b": "Machine Query Transfer Technology",
@@ -13,7 +13,7 @@
       "difficulty": "beginner"
     },
     {
-      "question": "MQTT follows which communication model?",
+      "question": "2. MQTT follows which communication model?",
       "answers": {
         "a": "Client–Server",
         "b": "Publish–Subscribe",
@@ -24,7 +24,7 @@
       "difficulty": "beginner"
     },
     {
-      "question": "The server that handles MQTT messages is called ___?",
+      "question": "3. The server that handles MQTT messages is called ___?",
       "answers": {
         "a": "Router",
         "b": "Controller",
@@ -35,7 +35,7 @@
       "difficulty": "beginner"
     },
     {
-      "question": "ESP8266 acts as ___ in MQTT communication.",
+      "question": "4. ESP8266 acts as ___ in MQTT communication.",
       "answers": {
         "a": "Broker",
         "b": "Publisher/Subscriber",
@@ -46,7 +46,7 @@
       "difficulty": "beginner"
     },
     {
-      "question": "Which port does MQTT usually use? (188__)",
+      "question": "5. Which port does MQTT usually use? (188__)",
       "answers": {
         "a": "1881",
         "b": "1882",
@@ -57,7 +57,7 @@
       "difficulty": "beginner"
     },
     {
-      "question": "MQTT messages are grouped under ___?",
+      "question": "6. MQTT messages are grouped under ___?",
       "answers": {
         "a": "Nodes",
         "b": "Topics",
@@ -68,7 +68,7 @@
       "difficulty": "beginner"
     },
     {
-      "question": "Which is lighter: MQTT or HTTP?",
+      "question": "7. Which is lighter: MQTT or HTTP?",
       "answers": {
         "a": "MQTT",
         "b": "HTTP",
@@ -79,7 +79,7 @@
       "difficulty": "beginner"
     },
     {
-      "question": "Which library is commonly used for MQTT in Arduino IDE?",
+      "question": "8. Which library is commonly used for MQTT in Arduino IDE?",
       "answers": {
         "a": "WiFi.h",
         "b": "PubSubClient.h",
@@ -90,7 +90,7 @@
       "difficulty": "intermediate"
     },
     {
-      "question": "What does QoS stand for?",
+      "question": "9. What does QoS stand for?",
       "answers": {
         "a": "Quality of Sensors",
         "b": "Quality of Service",
@@ -101,7 +101,7 @@
       "difficulty": "beginner"
     },
     {
-      "question": "Name one MQTT cloud broker.",
+      "question": "10. Name one MQTT cloud broker.",
       "answers": {
         "a": "ThingSpeak",
         "b": "HiveMQ",

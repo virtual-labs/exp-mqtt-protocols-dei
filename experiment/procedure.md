@@ -1,4 +1,4 @@
-## Procedure
+### Procedure for the experiment is as follows:
 
 1. Open the experiment in the virtual lab for sending live sensor data using MQTT protocol with ESP8266/ESP32.  
    The ESP32 board and the DHT sensor are already connected in the workspace.
