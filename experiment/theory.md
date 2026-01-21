@@ -1,120 +1,186 @@
-MQTT (Message Queuing Telemetry Transport) is one of the most widely used communication protocols in IoT applications. It is lightweight, fast, and designed for devices with low processing power and limited network bandwidth—making it ideal for microcontrollers like ESP8266 and ESP32. In this experiment, we simulate the process of reading sensor data and publishing it to an IoT cloud platform using the MQTT protocol.
+#### Objective
 
----
+The objective of this experiment is to simulate and understand the process of sending live sensor data to an IoT cloud platform using the **MQTT (Message Queuing Telemetry Transport)** protocol with **ESP8266 and ESP32** microcontrollers.
 
-## ESP8266/ESP32 Microcontroller
+This experiment focuses on **lightweight communication**, **publish–subscribe architecture**, **Quality of Service (QoS)** levels, and **real-time data transfer**, which are critical concepts for large-scale and resource-constrained IoT systems.
 
-### Overview
-Both are Wi-Fi-enabled microcontrollers used for IoT-based communication.
+#### Introduction
 
-- **ESP8266**: Low-cost Wi-Fi SoC with basic GPIO pins.  
-- **ESP32**: Advanced dual-core processor with integrated Wi-Fi & Bluetooth.
+The Internet of Things (IoT) enables interconnected devices to collect, exchange, and analyze data over the internet. As IoT devices are often deployed in environments with limited bandwidth, low power availability, and unstable network conditions, efficient communication protocols are essential.
 
-### Role in MQTT Communication
-- Acts as an **MQTT client**  
-- Connects to the broker (cloud server) over Wi-Fi  
-- Publishes sensor data and subscribes to topics for receiving commands  
+While **HTTP** follows a synchronous request–response communication model, it introduces overhead due to headers and repeated connections. To address these limitations, **MQTT** was specifically designed for IoT and machine-to-machine (M2M) communication. MQTT is a **lightweight**, **event-driven**, and **bandwidth-efficient** protocol that supports real-time data transmission with minimal resource usage.
 
----
+This experiment demonstrates how ESP8266 and ESP32 use MQTT to publish live sensor data to an IoT platform, enabling scalable and reliable real-time monitoring.
 
-## MQTT Protocol in IoT
+#### ESP8266 and ESP32 as MQTT-Based IoT Nodes
 
-MQTT is a publish–subscribe communication protocol designed for efficient IoT messaging.
+ESP8266 and ESP32 are widely used in MQTT-based IoT systems due to the following features:
 
-### Key Features
+- Built-in **Wi-Fi connectivity**
+- Integrated **TCP/IP stack**
+- Compatibility with popular **MQTT client libraries**
+- Low power consumption
+- Ability to handle real-time sensor data efficiently
+
+In this experiment, ESP8266 / ESP32 function as **MQTT clients** that acquire sensor data, format it into messages, and publish it to an MQTT broker over a Wi-Fi network.
+
+<div><img src="./images/esp32.webp" width="40%"></div>  
+*Source: Espressif Systems Documentation*
+
+#### IoT System Architecture Using MQTT
+
+An MQTT-based IoT system follows a decoupled communication architecture consisting of the following components:
+
+1. **Sensors**  
+   Sensors measure physical or environmental parameters such as temperature, humidity, gas concentration, or distance.
+
+2. **ESP8266 / ESP32 (Publisher)**  
+   Reads sensor data, processes it, and publishes messages to MQTT topics.
+
+3. **MQTT Broker**  
+   Acts as a central message hub that receives messages from publishers and distributes them to subscribers.
+
+4. **Subscribers / IoT Dashboard**  
+   Subscribe to specific topics and receive sensor updates in real time.
+
+Unlike HTTP, MQTT does not require direct communication between sender and receiver, making it highly scalable.
+
+<div><img src="./images/mqtt_architecture.png" width="50%"></div>  
+*Source: MQTT Protocol Architecture*
+
+#### MQTT Protocol Overview
+
+MQTT (Message Queuing Telemetry Transport) is a **lightweight messaging protocol** based on the **publish–subscribe communication model**. It runs over TCP/IP and is optimized for devices with limited processing power and memory.
+
+##### Key Characteristics of MQTT
+
 - Lightweight and bandwidth-efficient  
-- Works over TCP/IP  
-- Very low latency  
-- Excellent for real-time communication  
-- Supports thousands of clients  
+- Asynchronous communication  
+- Runs over TCP/IP  
+- Supports unreliable networks  
+- Ideal for low-power IoT devices  
 
-### MQTT Components
+MQTT is particularly suitable for:
+- Remote monitoring systems  
+- Real-time sensor data streaming  
+- Large-scale IoT deployments  
 
-#### MQTT Broker (Cloud Server)
-- Manages distribution of messages  
-- Popular examples: **Mosquitto, HiveMQ, Adafruit IO, ThingsBoard**
+#### Publish–Subscribe Communication Model
 
-#### Publisher
-- Sends data to a topic  
-- ESP8266/ESP32 acts as the publisher  
+##### Publisher
+- ESP8266 / ESP32 publishes sensor data
+- Messages are sent to a specific **topic**
 
-#### Subscriber
-- Receives messages from subscribed topics  
-- Can be dashboards, phones, or other IoT devices  
+##### Broker
+- Receives messages from publishers
+- Filters and routes messages based on topics
+- Manages client connections
 
-#### Topic
-- Logical communication channel  
-- Example: `"home/sensors/temperature"`
+##### Subscriber
+- Subscribes to one or more topics
+- Automatically receives updates when new data is published
 
-### Example Workflow
-1. ESP connects to Wi-Fi  
-2. Connects to MQTT broker  
-3. Publishes sensor data  
-4. Subscribed dashboard receives live updates  
+This model **decouples data producers and consumers**, improving scalability and system reliability.
 
----
+#### MQTT Topics and Messages
 
-## Live Sensor Data Collection
+MQTT uses **topics** to organize and filter messages.
 
-Sensors such as **DHT11, DHT22, LDR, Soil Moisture, MQ sensors, Ultrasonic** can be interfaced with the ESP board.  
-The ESP reads values using analog/digital pins and publishes them to the MQTT topic.
+- Topics are hierarchical strings  
+- Example topics:
+  - `lab/sensors/temperature`
+  - `lab/sensors/humidity`
 
-### Data Flow
-- Sensor → ESP board  
-- ESP → MQTT Publish  
-- Broker → Subscribers  
-- Dashboard → Real-time visualization  
+Each MQTT message consists of:
+- **Topic** – Identifies message category  
+- **Payload** – Contains sensor data  
 
----
+Payload formats may include:
+- Plain text  
+- JSON  
 
-## MQTT vs. HTTP (Why MQTT Is Preferred)
+Structured topics enable scalable and organized IoT communication.
 
-| Feature            | HTTP             | MQTT              |
-| ------------------ | ---------------- | ----------------- |
-| Communication Type | Request/Response | Publish/Subscribe |
-| Bandwidth Usage    | High             | Very Low          |
-| Speed              | Medium           | Very Fast         |
-| Real-Time Updates  | Limited          | Excellent         |
-| Power Consumption  | Higher           | Very Low          |
+#### Sensor Data Acquisition and Publishing Process
 
-MQTT is ideal for **battery-powered** IoT devices and real-time applications.
+The complete data flow in this experiment includes:
 
----
+1. Sensors are interfaced with ESP8266 / ESP32  
+2. Sensor values are read using ADC or digital pins  
+3. Raw data is processed and converted into meaningful units  
+4. Sensor data is formatted into an MQTT payload  
+5. Payload is published to a predefined MQTT topic  
+6. Broker distributes data to subscribed clients  
 
-## IoT Cloud Platforms for MQTT
+This process enables **near real-time updates** with minimal latency.
 
-Cloud platforms supporting MQTT include:
+#### MQTT Broker and IoT Platform
 
-- HiveMQ Cloud  
-- ThingsBoard  
-- Adafruit IO  
-- AWS IoT Core  
-- Google Cloud IoT  
-- Mosquitto Broker  
+An MQTT broker acts as the central server for message exchange.
 
-### Features
+##### Key Broker Functions
+- Topic-based message routing  
+- Client authentication  
+- Session management  
+- Message persistence  
+
+IoT platforms using MQTT typically provide:
 - Real-time dashboards  
-- Topic-based message organization  
-- Device authentication  
-- Remote control using publish/subscribe  
-- Graphs and charts for visualization  
+- Graphical data visualization  
+- Alerts and notifications  
+- Device and topic management  
 
----
+Common MQTT brokers and platforms include:
+- Mosquitto  
+- HiveMQ  
+- EMQX  
+- Cloud-based IoT dashboards  
 
-## Simulation Environment
+<div><img src="./images/dashboard.png" width="45%"></div>  
+*Source: MQTT IoT Platform Documentation*
 
-Virtual lab tools like **Wokwi, Tinkercad (extensions), Proteus IoT Builder** allow full MQTT simulation.
+#### Quality of Service (QoS) Levels in MQTT
 
-### What Can Be Simulated
-- Sensor readings  
-- Wi-Fi connection  
-- MQTT broker connection  
-- Publish/subscribe operations  
-- Live dashboard updates  
+MQTT provides three Quality of Service (QoS) levels to balance reliability and performance:
 
-### Benefits
-- No physical Wi-Fi required  
-- Easy debugging  
-- Cost-free and safe  
-- Real-time IoT simulation  
+| QoS Level | Description |
+|----------|------------|
+| QoS 0 | At most once – Fast delivery, no guarantee |
+| QoS 1 | At least once – Guaranteed delivery |
+| QoS 2 | Exactly once – Highest reliability |
+
+QoS selection depends on application requirements such as latency tolerance and reliability needs.
+
+#### Security Considerations in MQTT Communication
+
+MQTT-based IoT systems require proper security mechanisms to prevent unauthorized access and data breaches.
+
+Common security techniques include:
+- Client authentication using username and password  
+- TLS/SSL encryption for secure communication  
+- Access control on MQTT topics  
+
+Although basic simulations may not implement full security, understanding these concepts is essential for real-world IoT deployments.
+
+#### Applications of MQTT-Based IoT Systems
+
+MQTT is widely used in various IoT domains, including:
+
+- Smart agriculture monitoring  
+- Industrial IoT (IIoT) systems  
+- Smart home automation  
+- Environmental monitoring platforms  
+- Healthcare IoT solutions  
+
+#### Conclusion
+
+This experiment provides an in-depth understanding of MQTT-based IoT communication using ESP8266 and ESP32 microcontrollers. It highlights the advantages of the publish–subscribe model, lightweight communication, and QoS mechanisms, making MQTT a preferred protocol for scalable and real-time IoT applications.
+
+#### References
+
+1. MQTT Version 3.1.1 Specification – OASIS  
+2. Espressif Systems ESP8266 & ESP32 Documentation  
+3. IoT Communication Protocols – IEEE  
+4. HiveMQ MQTT Essentials Guide  
+5. Internet of Things: Principles and Paradigms – Rajkumar Buyya  
 
