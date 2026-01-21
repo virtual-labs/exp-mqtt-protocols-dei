@@ -24,6 +24,57 @@
   top: 0vh;  
 } 
 
+/* Instruction Box Styles */
+.instruction-box {
+  width: 90vw;
+  margin: 20px auto;
+  padding: 20px 30px;
+  background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+  border: 2px solid #4a90e2;
+  border-radius: 10px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.instruction-title {
+  color: #2c3e50;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 24px;
+  margin: 0 0 15px 0;
+  text-align: center;
+}
+
+.instruction-content {
+  font-family: Arial, Helvetica, sans-serif;
+  color: #34495e;
+  line-height: 1.6;
+}
+
+.instruction-content p {
+  margin: 10px 0;
+}
+
+.instruction-content ol {
+  margin: 15px 0;
+  padding-left: 25px;
+}
+
+.instruction-content ol li {
+  margin: 8px 0;
+  font-size: 16px;
+}
+
+.instruction-content .note {
+  background-color: #fff3cd;
+  border-left: 4px solid #ffc107;
+  padding: 10px 15px;
+  margin-top: 15px;
+  border-radius: 4px;
+}
+
+.instruction-content strong {
+  color: #2c3e50;
+  font-weight: 600;
+}
 .container {
   width: 95vw; /* 50% of the viewport width */
   height: 80vh; /* 50% of the viewport height */

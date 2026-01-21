@@ -24,6 +24,24 @@
 
 <body>
 
+      <!-- Instruction Box -->
+    <div class="instruction-box">
+        <h2 class="instruction-title">📋 Experiment Instructions</h2>
+        <div class="instruction-content">
+            <p><strong>Objective:</strong> Simulate DHT11 sensor data transmission from ESP32 to MQTT Broker using MQTT protocol.</p>
+            <ol>
+                <li>Review the ESP32 code in the text area showing WiFi, MQTT client, and DHT11 sensor configuration.</li>
+                <li>Click <strong>"Start Simulation"</strong> to establish connection with MQTT broker and begin publishing data.</li>
+                <li>Observe the sensor readings and connection status changing from "Disconnected" to "Connected".</li>
+                <li>Scroll down to view real-time MQTT messages being published to topics: <code>iot/temperature</code> and <code>iot/humidity</code>.</li>
+                <li>Monitor the gauge charts updating with live sensor readings transmitted via MQTT protocol.</li>
+                <li>Click <strong>"Stop Simulation"</strong> to disconnect from MQTT broker and halt data transmission.</li>
+            </ol>
+            <p class="note">💡 <strong>Note:</strong> The ESP32 publishes DHT11 sensor data every 2 seconds to the MQTT broker (mqtt.iot-server.com:1883).</p>
+        </div>
+    </div>
+
+
 
   <div class="container">
     
