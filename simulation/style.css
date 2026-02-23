@@ -1,0 +1,262 @@
+/* Main container for the simulation */
+.p-head {
+  font-family: Arial, Helvetica, sans-serif;
+  font-weight: 600;
+  letter-spacing: 1px;
+}
+
+.exp-changer {
+  display: flex;
+  justify-content: center;
+  border-bottom: 4px solid rgba(4, 59, 79, 0.5);
+  height: 60px;
+}
+
+.exp-changer-heading {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: grey;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 20px;
+  outline: none;
+  position: relative;
+  top: 0vh;
+}
+
+/* Instruction Box Styles */
+.instruction-box {
+  width: 90vw;
+  margin: 20px auto;
+  padding: 20px 30px;
+  background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+  border: 2px solid #4a90e2;
+  border-radius: 10px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.instruction-title {
+  color: #2c3e50;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 24px;
+  margin: 0 0 15px 0;
+  text-align: center;
+}
+
+.instruction-content {
+  font-family: Arial, Helvetica, sans-serif;
+  color: #34495e;
+  line-height: 1.6;
+}
+
+.instruction-content p {
+  margin: 10px 0;
+}
+
+.instruction-content ol {
+  margin: 15px 0;
+  padding-left: 25px;
+}
+
+.instruction-content ol li {
+  margin: 8px 0;
+  font-size: 16px;
+}
+
+.instruction-content .note {
+  background-color: #fff3cd;
+  border-left: 4px solid #ffc107;
+  padding: 10px 15px;
+  margin-top: 15px;
+  border-radius: 4px;
+}
+
+.instruction-content strong {
+  color: #2c3e50;
+  font-weight: 600;
+}
+
+.container {
+  width: 95vw;
+  /* 50% of the viewport width */
+  height: 80vh;
+  /* 50% of the viewport height */
+  display: flex;
+  position: relative;
+  justify-content: space-evenly;
+  align-items: center;
+  background-color: #dddddd;
+  margin-left: auto;
+  margin-right: auto;
+  padding: 0;
+  box-sizing: border-box;
+  border: 2px solid #a39a9ac5;
+}
+
+
+html {
+  scroll-behavior: smooth;
+  top: 0px;
+}
+
+
+.container {
+  display: flex;
+  /* Use flexbox for layout */
+  justify-content: space-between;
+  /* Space between items */
+  align-items: flex-start;
+  /* Align items at the top */
+  margin-top: 14px;
+}
+
+.scrollable-box {
+  width: 80vh;
+  /* Set a fixed width for the box */
+  height: 100%;
+  /* Set the height of the box */
+  border: 1px solid #ccc;
+  /* Add a border */
+  overflow-y: auto;
+  /* Enable vertical scroll */
+  overflow-x: hidden;
+  /* Disable horizontal scroll */
+  padding: 10px;
+  /* Add some padding */
+  box-sizing: border-box;
+  /* Include padding and border in width/height */
+  font-family: monospace;
+  font-size: large;
+  color: #2ea361;
+  /* Use a monospace font for code */
+  background-color: #ffffff;
+  /* Optional: light background for better readability */
+  scrollbar-width: thin;
+  /* For Firefox: make scrollbar thinner */
+  scrollbar-color: #888 #f9f9f9;
+  /* For Firefox: scrollbar color */
+  margin: 0;
+  /* Zero margin */
+}
+
+/* For Webkit browsers (Chrome, Safari) */
+.scrollable-box::-webkit-scrollbar {
+  width: 8px;
+  /* Width of the scrollbar */
+}
+
+.scrollable-box::-webkit-scrollbar-track {
+  background: #f9f9f9;
+  /* Track color */
+}
+
+.scrollable-box::-webkit-scrollbar-thumb {
+  background-color: #888;
+  /* Scrollbar color */
+  border-radius: 4px;
+  /* Round the corners of the scrollbar */
+}
+
+.scrollable-box::-webkit-scrollbar-thumb:hover {
+  background: #555;
+  /* Darker color on hover */
+}
+
+/* Image in the container */
+#ifimg {
+  scale: 100%;
+  margin-top: 200px;
+}
+
+.p-head {
+  font-size: x-large;
+  text-align: center;
+  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+
+.p-head2 {
+  font-size: x-large;
+  margin-left: 36px;
+  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+
+/* Start Simulation button */
+.container h2 {
+  position: absolute;
+  bottom: 0px;
+  right: 670px;
+  background-color: #2ea361;
+  color: #ffffff;
+  padding: 5px 28px;
+  border-radius: 6px;
+  cursor: pointer;
+  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+
+
+
+
+/* General body styling */
+body {
+  margin: 0;
+  padding: 0;
+  font-family: Arial, sans-serif;
+  flex-direction: column;
+  display: flex;
+}
+
+a:link,
+a:visited {
+  position: absolute;
+  bottom: 20px;
+  right: 1330px;
+  background-color: #2ea361;
+  color: white;
+  padding: 8px 40px;
+  font-size: larger;
+  border-radius: 6px;
+  cursor: pointer;
+  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+
+
+
+.text-container {
+  border: 2px solid rgb(146, 146, 146);
+  width: 520px;
+  height: 480px;
+  position: relative;
+  top: 2px;
+  border-radius: 8px;
+
+}
+
+textarea {
+  border-radius: 0px;
+  outline: none;
+  border: none;
+  color: green;
+}
+
+#arduinoCode {
+  position: relative;
+  font-size: 16px;
+  width: 40%;
+  height: 100%;
+  padding: 10px;
+  box-sizing: border-box;
+}
+
+/* CodeMirror editor styling - 40% width of container, 100% height of container */
+.container .CodeMirror {
+  height: 100% !important;
+  width: 100% !important;
+  font-size: 16px;
+  border: none;
+  border-radius: 0px;
+}
+
+.CodeMirror-scroll {
+  overflow-y: auto;
+  overflow-x: auto;
+}

@@ -1,0 +1,121 @@
+{
+  "version": 2.0,
+  "questions": [
+    {
+      "question": "1. MQTT stands for ___?",
+      "answers": {
+        "a": "Message Queue Telemetry Transport",
+        "b": "Machine Query Transfer Technology",
+        "c": "Message Quick Transfer Tool",
+        "d": "Modular Query Transport Technique"
+      },
+      "correctAnswer": "a",
+      "difficulty": "beginner"
+    },
+    {
+      "question": "2. MQTT follows which communication model?",
+      "answers": {
+        "a": "Client–Server",
+        "b": "Publish–Subscribe",
+        "c": "Request–Response",
+        "d": "Master–Slave"
+      },
+      "correctAnswer": "b",
+      "difficulty": "beginner"
+    },
+    {
+      "question": "3. The server that handles MQTT messages is called ___?",
+      "answers": {
+        "a": "Router",
+        "b": "Controller",
+        "c": "Broker",
+        "d": "Host"
+      },
+      "correctAnswer": "c",
+      "difficulty": "beginner"
+    },
+    {
+      "question": "4. ESP8266 acts as ___ in MQTT communication.",
+      "answers": {
+        "a": "Broker",
+        "b": "Publisher/Subscriber",
+        "c": "Repeater",
+        "d": "Firewall"
+      },
+      "correctAnswer": "b",
+      "difficulty": "beginner"
+    },
+    {
+      "question": "5. Which port does MQTT usually use? (188__)",
+      "answers": {
+        "a": "1881",
+        "b": "1882",
+        "c": "1883",
+        "d": "1884"
+      },
+      "correctAnswer": "c",
+      "difficulty": "beginner"
+    },
+    {
+      "question": "6. MQTT messages are grouped under ___?",
+      "answers": {
+        "a": "Nodes",
+        "b": "Topics",
+        "c": "Channels",
+        "d": "Pages"
+      },
+      "correctAnswer": "b",
+      "difficulty": "beginner"
+    },
+    {
+      "question": "7. Which is lighter: MQTT or HTTP?",
+      "answers": {
+        "a": "MQTT",
+        "b": "HTTP",
+        "c": "Both same",
+        "d": "Depends on network"
+      },
+      "correctAnswer": "a",
+      "difficulty": "beginner"
+    },
+    {
+      "question": "8. Which library is commonly used for MQTT in Arduino IDE?",
+      "answers": {
+        "a": "WiFi.h",
+        "b": "PubSubClient.h",
+        "c": "ESPHTTPClient.h",
+        "d": "MQTTServer.h"
+      },
+      "correctAnswer": "b",
+      "difficulty": "intermediate"
+    },
+    {
+      "question": "9. What does QoS stand for?",
+      "answers": {
+        "a": "Quality of Sensors",
+        "b": "Quality of Service",
+        "c": "Queue of Signals",
+        "d": "Query over Server"
+      },
+      "correctAnswer": "b",
+      "difficulty": "beginner"
+    },
+    {
+      "question": "10. Name one MQTT cloud broker.",
+      "answers": {
+        "a": "ThingSpeak",
+        "b": "HiveMQ",
+        "c": "YouTube Cloud",
+        "d": "DriveMQ"
+      },
+      "correctAnswer": "b",
+      "difficulty": "beginner"
+    }
+  ]
+}
+
+    
+  
+  
+
+

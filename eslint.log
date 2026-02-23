@@ -1,0 +1,32 @@
+
+/home/runner/work/exp-mqtt-protocols-dei/exp-mqtt-protocols-dei/experiment/simulation/main.js
+    5:5   warning  'messageCount' is assigned a value but never used  no-unused-vars
+    7:1   warning  'am5' is not defined                               no-undef
+   10:13  warning  'am5radar' is not defined                          no-undef
+   18:28  warning  'am5radar' is not defined                          no-undef
+   22:29  warning  'am5' is not defined                               no-undef
+   25:30  warning  'am5' is not defined                               no-undef
+   26:30  warning  'am5' is not defined                               no-undef
+   27:30  warning  'am5' is not defined                               no-undef
+   28:30  warning  'am5' is not defined                               no-undef
+   34:13  warning  'am5xy' is not defined                             no-undef
+   46:36  warning  'am5xy' is not defined                             no-undef
+   47:21  warning  'am5radar' is not defined                          no-undef
+   48:25  warning  'am5' is not defined                               no-undef
+   59:17  warning  'am5' is not defined                               no-undef
+   62:17  warning  'am5' is not defined                               no-undef
+   71:25  warning  'am5' is not defined                               no-undef
+   71:38  warning  'am5' is not defined                               no-undef
+   77:25  warning  'am5' is not defined                               no-undef
+   77:38  warning  'am5' is not defined                               no-undef
+   83:20  warning  'am5' is not defined                               no-undef
+   84:25  warning  'am5themes_Animated' is not defined                no-undef
+   86:50  warning  'am5xy' is not defined                             no-undef
+   94:38  warning  'am5xy' is not defined                             no-undef
+  103:23  warning  'am5xy' is not defined                             no-undef
+  109:38  warning  'am5xy' is not defined                             no-undef
+  110:23  warning  'am5xy' is not defined                             no-undef
+  113:40  warning  'am5xy' is not defined                             no-undef
+
+✖ 27 problems (0 errors, 27 warnings)
+
