@@ -24,29 +24,6 @@
   top: 0vh;
 }
 
-.container {
-  width: 95vw;
-  /* 50% of the viewport width */
-  height: 80vh;
-  /* 50% of the viewport height */
-  display: flex;
-  position: relative;
-  justify-content: space-evenly;
-  align-items: center;
-  background-color: #dddddd;
-  margin-left: auto;
-  margin-right: auto;
-  padding: 0;
-  box-sizing: border-box;
-  border: 2px solid #a39a9ac5;
-}
-
-
-html {
-  scroll-behavior: smooth;
-  top: 0px;
-}
-
 /* Instruction Box Styles */
 .instruction-box {
   width: 90vw;
@@ -98,6 +75,30 @@ html {
   color: #2c3e50;
   font-weight: 600;
 }
+
+.container {
+  width: 95vw;
+  /* 50% of the viewport width */
+  height: 80vh;
+  /* 50% of the viewport height */
+  display: flex;
+  position: relative;
+  justify-content: space-evenly;
+  align-items: center;
+  background-color: #dddddd;
+  margin-left: auto;
+  margin-right: auto;
+  padding: 0;
+  box-sizing: border-box;
+  border: 2px solid #a39a9ac5;
+}
+
+
+html {
+  scroll-behavior: smooth;
+  top: 0px;
+}
+
 
 .container {
   display: flex;
@@ -182,8 +183,8 @@ html {
 /* Start Simulation button */
 .container h2 {
   position: absolute;
-  bottom: 2%;
-  right: 45%;
+  bottom: 0px;
+  right: 670px;
   background-color: #2ea361;
   color: #ffffff;
   padding: 5px 28px;
@@ -237,280 +238,25 @@ textarea {
   color: green;
 }
 
-#textBox {
+#arduinoCode {
   position: relative;
   font-size: 16px;
-  /* background-color: red; */
   width: 40%;
-  height: 77.2vh;
+  height: 100%;
   padding: 10px;
+  box-sizing: border-box;
 }
 
-/* ============================================
-   RESPONSIVE DESIGN - MEDIA QUERIES
-   ============================================ */
-
-/* Tablets and smaller screens (max-width: 1024px) */
-@media screen and (max-width: 1024px) {
-  .container {
-    flex-direction: column;
-    height: auto;
-    min-height: 80vh;
-    padding: 20px;
-    width: 95vw;
-  }
-
-  #ifimg {
-    scale: 80%;
-    margin-top: 20px;
-    max-width: 90%;
-  }
-
-  #textBox {
-    width: 90%;
-    height: 300px;
-    font-size: 14px;
-    margin: 20px 0;
-  }
-
-  .container h2 {
-    position: relative;
-    bottom: auto;
-    right: auto;
-    margin: 20px auto;
-  }
-
-  a:link,
-  a:visited {
-    position: relative;
-    bottom: auto;
-    right: auto;
-    margin: 20px auto;
-    display: block;
-    width: fit-content;
-    text-align: center;
-  }
-
-  .instruction-box {
-    width: 95vw;
-    padding: 15px 20px;
-  }
-
-  .instruction-title {
-    font-size: 20px;
-  }
-
-  .instruction-content ol li {
-    font-size: 14px;
-  }
-
-  .exp-changer-heading {
-    font-size: 18px;
-  }
-
-  .gauge-container {
-    flex-direction: column;
-    gap: 20px;
-  }
-
-  .gauge-box {
-    width: 100%;
-    max-width: 400px;
-  }
-
-  .chart-container {
-    flex-direction: column;
-  }
-
-  .chart-box {
-    width: 100%;
-    margin-bottom: 20px;
-  }
+/* CodeMirror editor styling - 40% width of container, 100% height of container */
+.container .CodeMirror {
+  height: 100% !important;
+  width: 100% !important;
+  font-size: 16px;
+  border: none;
+  border-radius: 0px;
 }
 
-/* Mobile devices (max-width: 768px) */
-@media screen and (max-width: 768px) {
-  .exp-changer {
-    height: 50px;
-  }
-
-  .exp-changer-heading {
-    font-size: 16px;
-  }
-
-  .p-head {
-    font-size: large;
-  }
-
-  .p-head2 {
-    font-size: large;
-    margin-left: 20px;
-  }
-
-  .container {
-    padding: 15px;
-    width: 98vw;
-  }
-
-  #ifimg {
-    scale: 70%;
-    margin-top: 10px;
-  }
-
-  #textBox {
-    width: 95%;
-    height: 250px;
-    font-size: 12px;
-    padding: 8px;
-  }
-
-  .container h2 {
-    font-size: 16px;
-    padding: 10px 20px;
-  }
-
-  a:link,
-  a:visited {
-    font-size: medium;
-    padding: 10px 30px;
-  }
-
-  .instruction-box {
-    width: 98vw;
-    padding: 12px 15px;
-    margin: 15px auto;
-  }
-
-  .instruction-title {
-    font-size: 18px;
-  }
-
-  .instruction-content ol {
-    padding-left: 20px;
-  }
-
-  .instruction-content ol li {
-    font-size: 13px;
-    margin: 6px 0;
-  }
-
-  .instruction-content .note {
-    font-size: 13px;
-    padding: 8px 12px;
-  }
-
-  .container2 h1 {
-    font-size: 24px;
-  }
-
-  .gauge-box,
-  .chart-box {
-    width: 100%;
-  }
-
-  #gaugeDiv1,
-  #gaugeDiv2 {
-    height: 250px !important;
-  }
-
-  #chartdiv1,
-  #chartdiv2 {
-    height: 300px !important;
-  }
-}
-
-/* Small mobile devices (max-width: 480px) */
-@media screen and (max-width: 480px) {
-  .exp-changer {
-    height: 45px;
-  }
-
-  .exp-changer-heading {
-    font-size: 14px;
-  }
-
-  .p-head {
-    font-size: medium;
-  }
-
-  .p-head2 {
-    font-size: medium;
-    margin-left: 10px;
-  }
-
-  .container {
-    padding: 10px;
-    width: 100vw;
-  }
-
-  #ifimg {
-    scale: 60%;
-    margin-top: 5px;
-  }
-
-  #textBox {
-    width: 98%;
-    height: 200px;
-    font-size: 11px;
-    padding: 5px;
-  }
-
-  .container h2 {
-    font-size: 14px;
-    padding: 8px 16px;
-  }
-
-  a:link,
-  a:visited {
-    font-size: small;
-    padding: 8px 20px;
-  }
-
-  .instruction-box {
-    width: 100vw;
-    padding: 10px;
-    margin: 10px auto;
-    border-radius: 5px;
-  }
-
-  .instruction-title {
-    font-size: 16px;
-  }
-
-  .instruction-content {
-    font-size: 13px;
-  }
-
-  .instruction-content ol {
-    padding-left: 15px;
-  }
-
-  .instruction-content ol li {
-    font-size: 12px;
-    margin: 5px 0;
-  }
-
-  .instruction-content .note {
-    font-size: 12px;
-    padding: 6px 10px;
-  }
-
-  .container2 h1 {
-    font-size: 20px;
-  }
-
-  .gauge-title,
-  .chart-title {
-    font-size: 16px;
-  }
-
-  #gaugeDiv1,
-  #gaugeDiv2 {
-    height: 200px !important;
-  }
-
-  #chartdiv1,
-  #chartdiv2 {
-    height: 250px !important;
-  }
+.CodeMirror-scroll {
+  overflow-y: auto;
+  overflow-x: auto;
 }
