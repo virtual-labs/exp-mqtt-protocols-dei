@@ -10,7 +10,7 @@
   justify-content: center;
   border-bottom: 4px solid rgba(4, 59, 79, 0.5);
   height: 60px;
-  }
+}
 
 .exp-changer-heading {
   display: flex;
@@ -21,8 +21,31 @@
   font-size: 20px;
   outline: none;
   position: relative;
-  top: 0vh;  
-} 
+  top: 0vh;
+}
+
+.container {
+  width: 95vw;
+  /* 50% of the viewport width */
+  height: 80vh;
+  /* 50% of the viewport height */
+  display: flex;
+  position: relative;
+  justify-content: space-evenly;
+  align-items: center;
+  background-color: #dddddd;
+  margin-left: auto;
+  margin-right: auto;
+  padding: 0;
+  box-sizing: border-box;
+  border: 2px solid #a39a9ac5;
+}
+
+
+html {
+  scroll-behavior: smooth;
+  top: 0px;
+}
 
 /* Instruction Box Styles */
 .instruction-box {
@@ -75,68 +98,67 @@
   color: #2c3e50;
   font-weight: 600;
 }
+
 .container {
-  width: 95vw; /* 50% of the viewport width */
-  height: 80vh; /* 50% of the viewport height */
   display: flex;
-  position: relative;
-  justify-content: space-evenly;
-  align-items: center;
-  background-color: #dddddd;
-  margin-left: auto;
-  margin-right: auto;
-  padding: 0; 
-  box-sizing: border-box;
-  border: 2px solid #a39a9ac5; 
-}
-
-
-html{
-  scroll-behavior: smooth;
-  top: 0px;
-  }
-
-
-.container {
-  display: flex; /* Use flexbox for layout */
-  justify-content: space-between; /* Space between items */
-  align-items: flex-start; /* Align items at the top */
+  /* Use flexbox for layout */
+  justify-content: space-between;
+  /* Space between items */
+  align-items: flex-start;
+  /* Align items at the top */
   margin-top: 14px;
 }
 
 .scrollable-box {
-  width: 80vh;            /* Set a fixed width for the box */
-  height: 100%;           /* Set the height of the box */
-  border: 1px solid #ccc;  /* Add a border */
-  overflow-y: auto;        /* Enable vertical scroll */
-  overflow-x: hidden;      /* Disable horizontal scroll */
-  padding: 10px;           /* Add some padding */
-  box-sizing: border-box;  /* Include padding and border in width/height */
+  width: 80vh;
+  /* Set a fixed width for the box */
+  height: 100%;
+  /* Set the height of the box */
+  border: 1px solid #ccc;
+  /* Add a border */
+  overflow-y: auto;
+  /* Enable vertical scroll */
+  overflow-x: hidden;
+  /* Disable horizontal scroll */
+  padding: 10px;
+  /* Add some padding */
+  box-sizing: border-box;
+  /* Include padding and border in width/height */
   font-family: monospace;
-  font-size: large;  
-  color: #2ea361; /* Use a monospace font for code */
-  background-color: #ffffff; /* Optional: light background for better readability */
-  scrollbar-width: thin;    /* For Firefox: make scrollbar thinner */
-  scrollbar-color: #888 #f9f9f9; /* For Firefox: scrollbar color */
-  margin: 0;               /* Zero margin */
+  font-size: large;
+  color: #2ea361;
+  /* Use a monospace font for code */
+  background-color: #ffffff;
+  /* Optional: light background for better readability */
+  scrollbar-width: thin;
+  /* For Firefox: make scrollbar thinner */
+  scrollbar-color: #888 #f9f9f9;
+  /* For Firefox: scrollbar color */
+  margin: 0;
+  /* Zero margin */
 }
 
 /* For Webkit browsers (Chrome, Safari) */
 .scrollable-box::-webkit-scrollbar {
-  width: 8px; /* Width of the scrollbar */
+  width: 8px;
+  /* Width of the scrollbar */
 }
 
 .scrollable-box::-webkit-scrollbar-track {
-  background: #f9f9f9; /* Track color */
+  background: #f9f9f9;
+  /* Track color */
 }
 
 .scrollable-box::-webkit-scrollbar-thumb {
-  background-color: #888; /* Scrollbar color */
-  border-radius: 4px; /* Round the corners of the scrollbar */
+  background-color: #888;
+  /* Scrollbar color */
+  border-radius: 4px;
+  /* Round the corners of the scrollbar */
 }
 
 .scrollable-box::-webkit-scrollbar-thumb:hover {
-  background: #555; /* Darker color on hover */
+  background: #555;
+  /* Darker color on hover */
 }
 
 /* Image in the container */
@@ -144,23 +166,24 @@ html{
   scale: 100%;
   margin-top: 200px;
 }
+
 .p-head {
-  font-size: x-large;  
+  font-size: x-large;
   text-align: center;
-  font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif; 
+  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
 }
 
 .p-head2 {
   font-size: x-large;
   margin-left: 36px;
-  font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
 }
 
 /* Start Simulation button */
 .container h2 {
   position: absolute;
-  bottom: 0px;
-  right: 1570px;
+  bottom: 2%;
+  right: 45%;
   background-color: #2ea361;
   color: #ffffff;
   padding: 5px 28px;
@@ -173,14 +196,16 @@ html{
 
 
 /* General body styling */
-body {  
+body {
   margin: 0;
   padding: 0;
   font-family: Arial, sans-serif;
   flex-direction: column;
   display: flex;
 }
-a:link, a:visited {
+
+a:link,
+a:visited {
   position: absolute;
   bottom: 20px;
   right: 1330px;
@@ -191,44 +216,301 @@ a:link, a:visited {
   border-radius: 6px;
   cursor: pointer;
   font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+
+
+
+.text-container {
+  border: 2px solid rgb(146, 146, 146);
+  width: 520px;
+  height: 480px;
+  position: relative;
+  top: 2px;
+  border-radius: 8px;
+
+}
+
+textarea {
+  border-radius: 0px;
+  outline: none;
+  border: none;
+  color: green;
+}
+
+#textBox {
+  position: relative;
+  font-size: 16px;
+  /* background-color: red; */
+  width: 40%;
+  height: 77.2vh;
+  padding: 10px;
+}
+
+/* ============================================
+   RESPONSIVE DESIGN - MEDIA QUERIES
+   ============================================ */
+
+/* Tablets and smaller screens (max-width: 1024px) */
+@media screen and (max-width: 1024px) {
+  .container {
+    flex-direction: column;
+    height: auto;
+    min-height: 80vh;
+    padding: 20px;
+    width: 95vw;
   }
 
+  #ifimg {
+    scale: 80%;
+    margin-top: 20px;
+    max-width: 90%;
+  }
 
+  #textBox {
+    width: 90%;
+    height: 300px;
+    font-size: 14px;
+    margin: 20px 0;
+  }
 
-  .text-container{
-    border: 2px solid rgb(146, 146, 146);
-    width: 520px;
-    height: 480px;
+  .container h2 {
     position: relative;
-    top: 2px;
-    border-radius: 8px;
-    
+    bottom: auto;
+    right: auto;
+    margin: 20px auto;
   }
-  textarea{
-    border-radius: 0px;
-    outline: none;
-    border: none;
-    color: green;
+
+  a:link,
+  a:visited {
+    position: relative;
+    bottom: auto;
+    right: auto;
+    margin: 20px auto;
+    display: block;
+    width: fit-content;
+    text-align: center;
   }
-  #arduinoCode{
-    position: relative;    
+
+  .instruction-box {
+    width: 95vw;
+    padding: 15px 20px;
+  }
+
+  .instruction-title {
+    font-size: 20px;
+  }
+
+  .instruction-content ol li {
+    font-size: 14px;
+  }
+
+  .exp-changer-heading {
+    font-size: 18px;
+  }
+
+  .gauge-container {
+    flex-direction: column;
+    gap: 20px;
+  }
+
+  .gauge-box {
+    width: 100%;
+    max-width: 400px;
+  }
+
+  .chart-container {
+    flex-direction: column;
+  }
+
+  .chart-box {
+    width: 100%;
+    margin-bottom: 20px;
+  }
+}
+
+/* Mobile devices (max-width: 768px) */
+@media screen and (max-width: 768px) {
+  .exp-changer {
+    height: 50px;
+  }
+
+  .exp-changer-heading {
     font-size: 16px;
-    width: 40%;
-    height: 100%;
+  }
+
+  .p-head {
+    font-size: large;
+  }
+
+  .p-head2 {
+    font-size: large;
+    margin-left: 20px;
+  }
+
+  .container {
+    padding: 15px;
+    width: 98vw;
+  }
+
+  #ifimg {
+    scale: 70%;
+    margin-top: 10px;
+  }
+
+  #textBox {
+    width: 95%;
+    height: 250px;
+    font-size: 12px;
+    padding: 8px;
+  }
+
+  .container h2 {
+    font-size: 16px;
+    padding: 10px 20px;
+  }
+
+  a:link,
+  a:visited {
+    font-size: medium;
+    padding: 10px 30px;
+  }
+
+  .instruction-box {
+    width: 98vw;
+    padding: 12px 15px;
+    margin: 15px auto;
+  }
+
+  .instruction-title {
+    font-size: 18px;
+  }
+
+  .instruction-content ol {
+    padding-left: 20px;
+  }
+
+  .instruction-content ol li {
+    font-size: 13px;
+    margin: 6px 0;
+  }
+
+  .instruction-content .note {
+    font-size: 13px;
+    padding: 8px 12px;
+  }
+
+  .container2 h1 {
+    font-size: 24px;
+  }
+
+  .gauge-box,
+  .chart-box {
+    width: 100%;
+  }
+
+  #gaugeDiv1,
+  #gaugeDiv2 {
+    height: 250px !important;
+  }
+
+  #chartdiv1,
+  #chartdiv2 {
+    height: 300px !important;
+  }
+}
+
+/* Small mobile devices (max-width: 480px) */
+@media screen and (max-width: 480px) {
+  .exp-changer {
+    height: 45px;
+  }
+
+  .exp-changer-heading {
+    font-size: 14px;
+  }
+
+  .p-head {
+    font-size: medium;
+  }
+
+  .p-head2 {
+    font-size: medium;
+    margin-left: 10px;
+  }
+
+  .container {
     padding: 10px;
-    box-sizing: border-box;
+    width: 100vw;
   }
-  
-  /* CodeMirror editor styling - 40% width of container, 100% height of container */
-  .container .CodeMirror {
-    height: 100% !important;
-    width: 100% !important;
+
+  #ifimg {
+    scale: 60%;
+    margin-top: 5px;
+  }
+
+  #textBox {
+    width: 98%;
+    height: 200px;
+    font-size: 11px;
+    padding: 5px;
+  }
+
+  .container h2 {
+    font-size: 14px;
+    padding: 8px 16px;
+  }
+
+  a:link,
+  a:visited {
+    font-size: small;
+    padding: 8px 20px;
+  }
+
+  .instruction-box {
+    width: 100vw;
+    padding: 10px;
+    margin: 10px auto;
+    border-radius: 5px;
+  }
+
+  .instruction-title {
     font-size: 16px;
-    border: none;
-    border-radius: 0px;
   }
-  
-  .CodeMirror-scroll {
-    overflow-y: auto;
-    overflow-x: auto;
+
+  .instruction-content {
+    font-size: 13px;
   }
+
+  .instruction-content ol {
+    padding-left: 15px;
+  }
+
+  .instruction-content ol li {
+    font-size: 12px;
+    margin: 5px 0;
+  }
+
+  .instruction-content .note {
+    font-size: 12px;
+    padding: 6px 10px;
+  }
+
+  .container2 h1 {
+    font-size: 20px;
+  }
+
+  .gauge-title,
+  .chart-title {
+    font-size: 16px;
+  }
+
+  #gaugeDiv1,
+  #gaugeDiv2 {
+    height: 200px !important;
+  }
+
+  #chartdiv1,
+  #chartdiv2 {
+    height: 250px !important;
+  }
+}
